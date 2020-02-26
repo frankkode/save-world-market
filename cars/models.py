@@ -2,7 +2,7 @@ from django.db import models
 import datetime
 from django.utils import timezone
 from tinymce.models import HTMLField
-# Create your models here.
+# car model.
 
 
 class Car(models.Model):

@@ -1,22 +1,24 @@
-/*navbar on big screen*/
+/*navbar on mediam screen*/
 @media only screen and (max-width:768px) {
     .navbar {
         background-color: #4c3fdc;
     }
 }
 
+/*navbar on big screen*/
 @media only screen and (min-width:768px) {
     .navbar {
         background-color: #3F729B;
     }
 }
 
+/*body font*/
 body,
 html {
     font-family: 'Oxanium', sans-serif;
 }
 
-/*main style*/
+/*main style for html*/
 
 main {
     padding-top: 3rem;
@@ -274,7 +276,6 @@ a.button:hover {
     background-color: #ff6536;
 }
 
-/*image on post details*/
 
 /* The grid: Four equal columns that floats next to each other */
 .column {
