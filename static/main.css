@@ -121,8 +121,8 @@ h6 {
 
 /* profile css */
 profile image .account-img {
-    height: 125px;
-    width: 125px;
+    height: 60px;
+    width: 60px;
     margin-right: 20px;
     margin-bottom: 16px;
 }
@@ -198,7 +198,6 @@ div#columns figure img {
     margin-bottom: 5px;
     position: relative;
     display: inline-block;
-
     width: 300px;
     height: 250px;
     background-position: 50% 50%;

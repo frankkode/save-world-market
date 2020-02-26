@@ -36,7 +36,7 @@ def PostListView(request):
     template_name = 'blog/home.html'  
     context_object_name = 'posts'
     post_list = Post.objects.all()
-    paginator = Paginator(post_list, 9)
+    paginator = Paginator(post_list, 10)
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)
