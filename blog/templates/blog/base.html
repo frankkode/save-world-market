@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<!-- head -->
+  {% include 'blog/head.html'%}
+  <!-- end head -->
+  <body class="fixed-sn cyan-skin">
+  <!-- navigation -->
+  {% include 'blog/navigation.html' %}
+    <!-- end navigation -->
+    <!-- header -->
+  {% include 'blog/header.html' %}
+    <!-- end header -->
+
+    
+  {% block content %}
+  {% endblock %}
+  <!-- footer -->
+{% include 'blog/footer.html' %} 
+<!-- end footer -->
+<!-- script -->
+{% include 'blog/script.html' %} 
+<!-- end script -->
+
+
+</body>
+</html>

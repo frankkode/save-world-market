@@ -1,0 +1,132 @@
+{% extends 'blog/base.html' %}
+{% load  humanize %}
+{% block content  %}
+  <hr class="mb-5 mt-4">
+<section id="#" class="py-4">
+<div class="container">
+<!--main post-->
+<div class=" col s12 m6">
+    {% for post in posts %}
+    <div class="display_posts">
+<div id="wrap" class="columns_4">
+	<div id="columns" class="columns_4">
+  <figure>
+  <div class="card listing-preview">
+<a href="{% url 'post-detail' post.id %}"><img  src="{{ post.image.url }}" alt="image.image-{{post.title}}" class='card-img-top text-shadow'/></a>
+<div class="card-img-overlay">
+  <h2>
+  <span class="badge badge-secondary text-white">{{ post.price  | intcomma }}</span>
+  </h2>
+</div>
+  <div class="spacing-on-detail text-center">
+	<span><a  href="{% url 'post-detail' post.id %}"><figcaption class="green-text  capitalise text-center text-uppercase">{{ post.title }}</figcaption></a></span><br>
+  <span><a href="{% url 'user-posts' post.author.username %}"><figcaption class="orange-text  text-capitalize">Seller: {{ post.author }}</figcaption></a></span><br>
+  
+  <h5 class="blue-text "><small>{{ post.date_posted | timesince }}</small></h5>
+  </div>
+    <a class="button" href="{% url 'post-detail' post.id %}">Read More</a>
+	</div>
+  </figure>
+
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+       
+        </div>
+</section>
+ <div class="container my-5 py-5 z-depth-1">
+<!--Section: Content calling-->
+    <section class="px-md-5 mx-md-5 text-center dark-grey-text">
+<!--Grid row-->
+      <div class="row d-flex justify-content-center">
+
+        <!--Grid column-->
+        <div class="col-xl-6 col-md-8">
+
+          <h3 class="font-weight-bold orange-text">Sell your house, Car...</h3>
+
+          <p class="text-muted">At SAVE-WORLD-Market we are known online market with millions of buyers everyday, selling with us you never regret</p>
+
+          <a class="btn btn-info btn-md ml-0 mb-5" href="{% url 'post-create' %}" role="button">Sell Now</a>
+
+          <p class="mb-4 font-weight-bold">Trusted by 1 000 000 + cusomers &amp; Real estates</p>
+
+          <!--Grid row-->
+          <div class="row">
+
+            <!--First column-->
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+              <img src="https://mdbootstrap.com/img/logo/brands/nike.png" class="img-fluid" alt="Nike - logo"
+                style="max-height: 40px">
+            </div>
+            <!--/First column-->
+
+            <!--Second column-->
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+              <img src="https://mdbootstrap.com/img/logo/brands/amazon.png" class="img-fluid" alt="Amazon - logo"
+                style="max-height: 40px">
+            </div>
+            <!--/Second column-->
+
+            <!--Third column-->
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+              <img src="https://mdbootstrap.com/img/logo/brands/sony.png" class="img-fluid" alt="Sony - logo"
+                style="max-height: 40px">
+            </div>
+            <!--/Third column-->
+
+            <!--Fourth column-->
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+              <img src="https://mdbootstrap.com/img/logo/brands/samsung.png" class="img-fluid" alt="Samsung - logo"
+                style="max-height: 40px">
+            </div>
+            <!--/Fourth column-->
+
+          </div>
+          <!--/Grid row-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+</section>
+    <!--Section: Content-->
+    </div>
+
+<!--pagination-->
+
+
+<ul class="pagination text-center">
+  {% if posts.has_previous %}
+    <li class="page-item">
+    <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+      <a href="?page={{ posts.previous_page_number }}" class="btn btn-outline-info mb-4">Prev</a>
+    </li>
+  {% endif %}
+
+  {% for p in page_range %}
+    {% if posts.number == p %}
+      <li class="page-item active ">
+        <a href="?page={{ p }}" class="btn btn-info mb-4">{{ p }}</a>
+      </li>
+    {% else %}
+      <li class="page-item">
+        <a href="?page={{ p }}" class="btn btn-outline-info mb-4">{{ p }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+
+  {% if posts.has_next %}
+    <li class="page-item">
+      <a href="?page={{ posts.next_page_number }}" class="btn btn-outline-info mb-4">Next</a>
+      <a class="btn btn-outline-info mb-4" href="?page={{ posts.paginator.num_pages }}">Last</a>
+    </li>
+  {% endif %}
+</ul>
+<!-- footer will show here-->
+
+{% endblock content %}
+    

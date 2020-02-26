@@ -1,0 +1,120 @@
+{% extends 'blog/base.html' %}
+{% block content  %}
+<div class="container">
+<div class="">
+
+<!-- image on post details-->
+<div class="display_posts text-center mt-4 col-sm-12">
+<div id="" class="columns_4 text-center ">
+	<div id="columns" class="columns_4 mr-5">
+  <figure>
+  
+{% for p in post.images_set.all %}
+    {% if p.image %}
+      
+      <a href="#" class="gallery " >
+        <img src="{{ p.image.url }}" alt="" class="img-thumbnail card-img-top text-shadow mt-5 "  onclick="myFunction(this);" >
+      </a>
+	
+    {% endif %}
+    {% endfor %}
+    </figure>
+</div>
+</div>
+</div>
+<!-- The expanding image container -->
+<div class="container justify-content-center">
+  <!-- Close the image -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+  <!-- Expanded image -->
+  <img id="expandedImg" style="width:80%" class="img-thumbnail">
+
+  <!-- Image text -->
+  <div id="imgtext"></div>
+</div>
+        
+<!-- post details seller, price and description -->
+
+<div class="container z-depth-1 my-5 py-5">
+
+  <!-- Section -->
+  <section>
+
+    <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">{{ post.date_posted }}</h6>
+    <!-- Jumbotron -->
+<div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/forest2.jpg);">
+  <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+    <div class="py-5">
+
+      <!-- Content -->
+      <h5 class="h5 orange-text">Seller: {{ post.author}}</h5>
+      <h2 class="card-title h2 my-4 py-2"><i class="fas fa-camera-retro"></i> {{ post.title}}</h2>
+      <p class="mb-4 pb-2 px-md-5 mx-md-5">{{ post.description }}</p>
+      <a class="btn peach-gradient">Price: {{ post.price}} €</a>
+
+    </div>
+  </div>
+</div>
+<!-- Jumbotron -->
+  </section>
+  <!-- Section -->
+
+</div>
+      
+  <!-- if user is authenticated this will show up on the post detail -->
+
+ {% if post.author == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' post.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' post.id %}">Delete</a>
+          </div>
+  {% endif %}
+</div>
+</div>
+<!-- address for the owner of the post-->
+  <div class="container py-5  z-depth-1">
+  <section class="p-md-3 mx-md-5 text-lg-left">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="dark-grey-text text-center font-weight-bold">ADDRESS & CONTACT
+          
+        </h3>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class=" mt-3 text-center">
+          <i class="fa fa-map-marker-alt fa-2x indigo-text mb-4"></i>
+          <h6 class="font-weight-lighter deep-orange-text">Post address:</h6>
+          <h4 class="font-weight-bold text-capitalize">{{ post.address }}</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-lg-0 mb-5">
+        <div class=" mt-3 text-center">
+          <i class="far fa-map fa-2x pink-text mb-4"></i>
+          <h6 class="font-weight-lighter deep-orange-text">City:</h6>
+          <h4 class="font-weight-bold text-capitalize">{{ post.city }}</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
+        <div class=" mt-3 text-center">
+          <i class="fa fa-globe-africa fa-2x amber-text mb-4"></i>
+          <h6 class="font-weight-lighter deep-orange-text">Country:</h6>
+         	<h4 class="font-weight-bold text-capitalize">{{ post.country }}</h4>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-md-0 mb-5">
+        <div class=" mt-3 text-center">
+          <i class="fas fa-phone-volume fa-2x green-text mb-4"></i>
+          <h6 class="font-weight-lighter deep-orange-text">Phone:</h6>
+         	<h4 class="font-weight-bold text-capitalize">Tel: {{ post.phone }}</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+{% endblock content %}
+    

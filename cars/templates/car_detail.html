@@ -1,0 +1,231 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<a href="{% url 'cars:car_index' %}" class="btn black-text margin-bottom-cat margin-right-cat" ><i class="fas fa-arrow-left"></i> <i class="fas fa-car fa green-text"></i>🚗 Auto </a>
+
+<div class="container my-5">
+<div class="row">
+<div class="container my-5 p-5 z-depth-1">
+
+
+  <!--Section: Content-->
+  <section class="dark-grey-text">
+
+    <!-- Section heading -->
+    <h2 class="text-center font-weight-bold mb-4 pb-2">{{car.title}}</h2>
+    <!-- Section description -->
+    <p class="text-muted mb-3">{{ car.date_posted}}</p>
+
+    <p class="text-center lead grey-text mx-auto mb-5"> {{car.description}}</p>
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4">
+
+        <!-- Grid row -->
+        <div class="row mb-3">
+
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="fas fa-2x fa-mobile-alt deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">Phone</h5>
+            <p class="grey-text">{{ car.phone}}</p>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+        <!-- Grid row -->
+        <div class="row mb-3">
+
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="fas fa-2x fa-envelope deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">Email</h5>
+            <p class="grey-text"> {{ car.email}}</p>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+        <!-- Grid row -->
+        <div class="row mb-md-0 mb-3">
+
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="fas fa-2x fa-map-marker-alt deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">Address</h5>
+            <p class="grey-text mb-md-0"> {{ car.address}}</p>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="fas fa-2x fa-dumbbell deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">Driver</h5>
+            <p class="grey-text mb-md-0"> {{ car.drive}}</p>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="fas fa-2x fa-calendar-alt deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">Year Model</h5>
+            <p class="grey-text mb-md-0"> {{ car.year_model}}</p>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 text-center">
+        <img class="img-fluid img-thumbnail" src="{{ car.image.url }}" alt="" >
+      </div>
+      <!--{{ share_string }}-->
+SHARE:
+<a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">
+<i class="fab fa-facebook-square ml-2"></i>
+</a>
+
+<a href="https://twitter.com/home?status={{share_string}}%20{{ request.build_absolute_uri }}">
+<i class="fab fa-twitter-square ml-2"></i>
+</a>
+
+<a href='https://plus.google.com/share?url={{ request.build_absolute_uri }}'> <i class="fab fa-google-plus-square ml-2"></i></a>
+
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ post.title}}&summary={{ share_string}}&source={{ request.build_absolute_uri }}">
+
+<i class="fab fa-linkedin ml-2"></i>
+</a>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4">
+
+        <!-- Grid row -->
+        <div class="row mb-3">
+
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="far fa-2x fa-map-pin deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">City</h5>
+            <p class="grey-text">{{ car.city}}</p>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+        <!-- Grid row -->
+        <div class="row mb-3">
+
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="fas fa-2x fa-globe-africa deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">Country</h5>
+            <p class="grey-text"> {{ car.country}}</p>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+        <!-- Grid row -->
+        <div class="row">
+
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="fas fa-2x fa-book deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">marker</h5>
+            <p class="grey-text mb-0"> {{ car.modeli}}</p>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="fas fa-2x fa-code deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">Fuel</h5>
+            <p class="grey-text mb-0"> {{ car.fuel}}</p>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-2">
+            <i class="fas fa-2x fa-money-bill-alt deep-purple-text"></i>
+          </div>
+          <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-10">
+            <h5 class="font-weight-bold mb-3">Price</h5>
+            <p class="grey-text mb-0"> {{ car.price}}</p>
+          </div>
+          <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+
+</div>
+</div>
+
+
+{% endblock %}

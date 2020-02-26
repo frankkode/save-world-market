@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% block content  %}
+<div class="container">
+<div class="row">
+
+ <!-- user post -->
+    {% for post in posts %}
+<div class="display_posts text-center">
+<div id="wrap" class="columns_4 ">
+	<div id="columns" class="columns_4">
+  <figure>
+<a href="{% url 'post-detail' post.id %}"><img  src="{{ post.image.url }}" alt="image.image-{{post.title}}" class='card-img-top' /></a>
+
+  <div class="spacing-on-detail">
+	<a  href="{% url 'post-detail' post.id %}"><figcaption class="green-text  capitalise text-center text-uppercase">{{ post.title }}</figcaption></a>
+  <h5 class="blue-text "><small>Updated on: {{ post.updated|date:"F d, Y" }}</small></h5><br>
+  
+  <span class="price"><strong>Price:$ {{ post.price }}-</strong></span> <br>
+  <h5 class="blue-text "><small>Posted on: {{ post.date_posted|date:"F d, Y" }}</small></h5>
+  </figure>
+</div>
+</div>
+</div>
+
+{% endfor %}
+</div>
+</div>
+</div>
+{% endblock content %}
+    

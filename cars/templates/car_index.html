@@ -1,0 +1,27 @@
+
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+<div class="row">
+{% for car in cars %}
+<!--house details-->
+    <div class="col-md-4">
+        <div class="card mb-2 rounded z-depth-2">
+            <img class="card-img-top img-thumbnail img-fluid imgs-details" src="{{ car.image.url }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ car.title }}</h5>
+                <p class="card-text">{{ car.description|linebreaks|truncatewords:10 }}</p>
+                <a href="{% url 'cars:car_detail' id=car.id %}"
+                   class="btn btn-pink btn-rounded btn-md">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

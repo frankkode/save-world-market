@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content  %}
+<section>
+
+<div class="container">
+<div class="row">   
+<!-- Default form register -->
+<form class="register-form-center border border-light p-5" action="#!" method="POST">
+    {% csrf_token %}
+    <p class="h4 mb-4">LOG IN</p>
+
+    
+    <fieldset class="form-group ">
+    {{ form|crispy }}
+    </fieldset>
+    <!-- Newsletter -->
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="defaultRegisterFormNewsletter">
+        <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>
+    </div>
+
+    <!-- Sign up button -->
+    <button class="btn btn-info my-4 btn-block" type="submit">LOG IN</button>
+    <small class="text-muted ml-2">
+    <a href="{% url 'password_reset' %}">Forgot Password?</a>
+    </small>
+
+    <!-- Terms of service -->
+    <p>Need An Account?
+        <em>Sign up here </em>
+        <a href="{% url 'register' %}" >Sign Up Now</a>
+
+    <!-- Social register --> 
+</form>
+<!-- Default form register -->
+
+    </div>
+    </div>
+</div>
+
+</section>
+
+
+{% endblock content %}
