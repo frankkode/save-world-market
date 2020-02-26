@@ -220,7 +220,7 @@ div#columns figure figcaption {
 
 a.button {
     padding: 10px;
-    background: salmon;
+    background: rgb(114, 157, 250);
     margin: 10px;
     display: block;
     text-align: center;
@@ -229,13 +229,13 @@ a.button {
     text-decoration: none;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     border-radius: 3px;
-    border-bottom: 3px solid #ff6536;
+    border-bottom: 3px solid #367cff;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 a.button:hover {
-    background: #ff6536;
-    border-bottom: 3px solid salmon;
+    background: #36d0ff;
+    border-bottom: 3px solid rgb(114, 118, 250);
     color: #f1f2f3;
 }
 
@@ -267,13 +267,13 @@ a.button:hover {
 }
 
 .dropdown-menu-color {
-    color: #ff6536;
-    background-color: #ff6536;
+    color: #6236ff;
+    background-color: #3676ff;
 }
 
 .dropdown-item-color {
-    color: #ff6536;
-    background-color: #ff6536;
+    color: #368dff;
+    background-color: #36a8ff;
 }
 
 
