@@ -12,11 +12,11 @@
 <div id="wrap" class="columns_4">
 	<div id="columns" class="columns_4">
   <figure>
-      <div class="card">
+      <div class="card listing-preview">
 <a href="{% url 'post-detail' post.id %}"><img  src="{{ post.image.url }}" alt="image.image-{{post.title}}" class='card-img-top text-shadow'/></a>
 <div class="card-img-overlay">
   <h2>
-  <span class="badge badge-secondary text-white">{{ post.price | intcomma  }}</span>
+  <span class="badge badge-default green-text">{{ post.price | intcomma  }}</span>
   </h2>
   </div>
   <div class="spacing-on-detail text-center">
