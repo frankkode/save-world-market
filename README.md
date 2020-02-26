@@ -1,4 +1,4 @@
-### [Travis]
+
 [![Build Status](https://travis-ci.com/frankkode/save-world-market.svg?branch=master)](https://travis-ci.com/frankkode/save-world-market)
 
 # [SAVE-WORLD-MARKET](https://save-world-market.herokuapp.com/)
