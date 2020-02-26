@@ -1,0 +1,1 @@
+web: gunicorn save_world_market.wsgi:application
